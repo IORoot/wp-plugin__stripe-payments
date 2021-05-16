@@ -45,14 +45,14 @@ function giftcard_generator($output, $txn_data)
         </div>
     </div>';
 
-    // check if code already exists.
+
     $args = array(
-        'post_type'   => 'asp_coupons',
-        [
-            'meta_key'   => 'code',
-            'meta_value' => $new_code
-        ],
+        'meta_key' => 'asp_coupon_code',
+        'meta_value' => $new_code,
+        'post_type' => 'asp_coupons',
+        'posts_per_page' => -1
     );
+    
     $exists = get_posts($args);
 
     // return if there are any results.
@@ -84,7 +84,7 @@ function giftcard_generator($output, $txn_data)
     $coupon = [
         'active'            => 1,
         'code'              => $new_code,
-        'discount'          => '100',
+        'discount'          => '100%',
         'disconut_type'     => 'perc',
         "red_limit"         => $quantity,
         "red_count"         => '0',
