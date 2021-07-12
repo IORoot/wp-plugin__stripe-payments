@@ -35,3 +35,13 @@ require __DIR__.'/src/stripe_thankyou_details.php';
 //  │                    Action - Adds a hidden date field to stripe          │
 //  └─────────────────────────────────────────────────────────────────────────┘
 require __DIR__.'/src/stripe_class_date_in_email.php';
+
+//  ┌─────────────────────────────────────────────────────────────────────────┐
+//  │                    Filter - change logo icon                            │
+//  └─────────────────────────────────────────────────────────────────────────┘
+require __DIR__.'/src/stripe_change_images.php';
+
+//  ┌─────────────────────────────────────────────────────────────────────────┐
+//  │                    Filter - add maichimp box                            │
+//  └─────────────────────────────────────────────────────────────────────────┘
+require __DIR__.'/src/stripe_mailchimp.php';
