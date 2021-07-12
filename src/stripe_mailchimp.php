@@ -25,12 +25,13 @@ function stripe_mailchimp_add_to_list($post_data){
 
 
     // The data to send to the API
+    // Fullname = MMERGE5
     $postData = array(
         "email_address" => $_POST["asp_email"],
         "status" => "subscribed",
-        "merge_fields" => array(
-            "FNAME"=> $_POST["asp_billing_name"]
-        )
+        "merge_fields" => [
+            "MMERGE5"=> $_POST["asp_billing_name"]
+        ]
     );
 
     // Setup cURL
