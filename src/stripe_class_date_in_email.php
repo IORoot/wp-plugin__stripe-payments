@@ -29,7 +29,7 @@ class ASP_custom_field_to_description {
         $extra .= "Date of Class: ".  $_GET['date'];
         $extra .= "</h2><br/>";
 
-		$body =  $body . $extra;
+        $body = preg_replace('/{injected_date}/', $_GET['date'], $body);
 		return $body;
 	}
 
