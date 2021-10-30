@@ -22,14 +22,11 @@ class ASP_custom_field_to_description {
     public function email_body_handler( $body, $data ) {
 
         if (!isset($_GET['date'])){
+            $body = preg_replace('/{injected_date}/', '', $body);
             return $body;
         }
 
-        $extra .= "<h2 style=\"color:#F59E0B;font-family:sans-serif\">";
-        $extra .= "Date of Class: ".  $_GET['date'];
-        $extra .= "</h2><br/>";
-
-        $body = preg_replace('/{injected_date}/', $_GET['date'], $body);
+        $body = preg_replace('/{injected_date}/', 'Class Date: '.$_GET['date'], $body);
 		return $body;
 	}
 
