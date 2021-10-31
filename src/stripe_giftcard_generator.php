@@ -84,7 +84,7 @@ function giftcard_generator($output, $txn_data)
     $coupon = [
         'active'            => 1,
         'code'              => $new_code,
-        'discount'          => '100%',
+        'discount'          => '100',
         'disconut_type'     => 'perc',
         "red_limit"         => $quantity,
         "red_count"         => '0',
